@@ -233,4 +233,6 @@ footer {
 .img2{
     height: 300px;
     width: auto;
+    text-align: center;
+    justify-items: center;
 }

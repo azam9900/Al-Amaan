@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white font-sans text-gray-800">
+  <header class="flex items-center justify-between p-4 border-b">
+   
+    <div class="text-xl font-bold tracking-wide">
+        Al-Amaan
+    </div>
+    <div class="space-x-4">
+      <a href="#" class="hover:underline">Help</a>
+      <a href="#" class="hover:underline">🛒</a>
+    </div>
+  </header>
+
+  <main class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 max-w-7xl mx-auto">
+    <!-- Image section -->
+    <div>
+      <img src="Rose Gold.jpg" alt="The Pique Polo" class="w-full rounded" />
+      <div class="mt-4 flex space-x-2 justify-center">
+        <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+      </div>
+    </div>
+
+    <!-- Info section -->
+    <div>
+      <div class="text-sm text-gray-500">Men's > T-Shirts > The Pique Polo</div>
+      <h1 class="text-3xl font-semibold mt-2">The Pique Polo</h1>
+      <div class="text-xl mt-1">75 EUR</div>
+      <div class="flex items-center mt-2 text-yellow-500">
+        ★★★★★ <span class="ml-2 text-sm text-gray-600">176 Reviews</span>
+      </div>
+
+      <!-- Color selection -->
+      <div class="mt-4">
+        <div class="text-sm font-medium">Dark Navy</div>
+        <div class="flex space-x-2 mt-2">
+          <div class="w-6 h-6 bg-blue-900 rounded-full border-2 border-black"></div>
+          <div class="w-6 h-6 bg-gray-900 rounded-full"></div>
+          <div class="w-6 h-6 bg-gray-600 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Size selection -->
+      <div class="mt-4">
+        <label class="text-sm font-medium">Size</label>
+        <select class="block w-1/2 border mt-1 p-2">
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+      </div>
+
+      <!-- Length selection -->
+      <div class="mt-4">
+        <label class="text-sm font-medium">Length</label>
+        <select class="block w-1/2 border mt-1 p-2">
+          <option>Short</option>
+          <option selected>Long</option>
+        </select>
+      </div>
+
+      <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 mt-6 w-full">ADD TO CART</button>
+      <p class="text-sm text-gray-500 mt-2">Delivery in 4–6 days | Free from 100 EUR | Free returns & exchanges</p>
+
+      <!-- Tabs -->
+      <div class="mt-6">
+        <div class="flex space-x-4 text-sm font-medium border-b">
+          <button class="pb-2 border-b-2 border-black">Overview</button>
+          <button class="pb-2">Details</button>
+          <button class="pb-2">Fit</button>
+          <button class="pb-2">Care</button>
+        </div>
+        <p class="mt-4 text-sm text-gray-700">
+          Debuted on the tennis courts of the 1920s, The Pique Polo shirt fills the space between the shirt and the T-shirt. First introduced in our permanent collection in 2016, this is our fifth version update: At its core is a custom developed soft and substantial, breathable organic cotton knit. Our straight cut silhouette is embellished with a perfectly balanced collar and a seamless French placket with our signature, tonal mother of pearl buttons.
+        </p>
+        <div class="mt-4 text-sm text-gray-600">Model also wearing:</div>
+        <img src="https://placehold.co/80x80" class="mt-2" alt="Model also wearing" />
+      </div>
+    </div>
+  </main>
+
+  <section class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <h3 class="font-semibold mb-2">Full Transparency</h3>
+        <p>Understanding and appreciating the value of our clothing is fundamental in learning to live with less. The more we know, the better decisions we make.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">23 EUR Landed Cost</h3>
+        <p>The cost of making this garment.</p>
+        <a href="#" class="underline">Show cost breakdown</a>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">100% Traceability</h3>
+        <p>How far we’ve traced the origin of the garment.</p>
+        <a href="#" class="underline">Show garment origin</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

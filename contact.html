@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <section class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat relative" style="background: linear-gradient(to right, rgb(246, 135, 154), #f90101);">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+
+    <div class="relative z-10 max-w-6xl w-full mx-auto p-6 grid md:grid-cols-2 gap-10">
+      
+      <!-- Left Contact Info -->
+      <div class="space-y-8">
+        <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+        <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+        <!-- Address -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-white text-black p-3 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 11c1.656 0 3-1.343 3-3s-1.344-3-3-3-3 1.343-3 3 1.344 3 3 3z"></path>
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-cyan-400 font-semibold">Address</h4>
+            <p>4671 Sugar Camp Road,<br>Owatonna, Minnesota, 55060</p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-white text-black p-3 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.6 19.6 0 01-6-6A19.8 19.8 0 012.08 4.18 2 2 0 014.09 2h3a2 2 0 012 1.72c.12.88.36 1.73.7 2.54a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.54-1.54a2 2 0 012.11-.45c.81.34 1.66.58 2.54.7a2 2 0 011.72 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-cyan-400 font-semibold">Phone</h4>
+            <p>507-475-60945-6094</p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start space-x-4">
+          <div class="bg-white text-black p-3 rounded-full">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4V4z" stroke="none"></path>
+              <path d="M4 4l8 8 8-8" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-cyan-400 font-semibold">Email</h4>
+            <p>wrub7d78i0e@temporary-mail.net</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="bg-white text-black p-8 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
+        <form class="space-y-5">
+          <input type="text" placeholder="Full Name" class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-cyan-500 p-2" />
+          <input type="email" placeholder="Email" class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-cyan-500 p-2" />
+          <textarea placeholder="Type your Message..." class="w-full border-b-2 border-gray-400 focus:outline-none focus:border-cyan-500 p-2"></textarea>
+          <button type="submit" class="bg-cyan-500 text-white px-6 py-2 rounded hover:bg-cyan-600 transition">Send</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
