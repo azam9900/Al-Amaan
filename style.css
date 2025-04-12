@@ -180,17 +180,6 @@ nav ul li a:hover {
     margin-bottom: 1rem;
 }
 
-.add-to-cart {
-    background-color: #8b5a2b;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
 .add-to-cart:hover {
     background-color: #6d4621;
 }
