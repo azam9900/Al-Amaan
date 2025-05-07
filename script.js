@@ -2,41 +2,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // Simulate loading delay
     setTimeout(function() {
         const loadingScreen = document.querySelector('.loading-screen');
-        loadingScreen.style.opacity = '0';
-        setTimeout(function() {
-            loadingScreen.style.display = 'none';
-        }, 500);
+        if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(function() {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
     }, 2000);
     
-    // Initialize cart
-    let cart = [];
+    // Initialize cart from localStorage or empty array
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Shop button functionality
-    const shopBtn = document.querySelector('.shop-btn');
-    if (shopBtn) {
-        shopBtn.addEventListener('click', function() {
-            document.querySelector('.products').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    }
-
     // Add to cart buttons
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const productCard = this.closest('.product-card');
-            const productName = productCard.querySelector('h3').textContent;
-            const productPrice = productCard.querySelector('p').textContent;
+            const productName = this.getAttribute('data-name');
+            const productPrice = parseFloat(this.getAttribute('data-price'));
             
-            // Add to cart
-            cart.push({
-                name: productName,
-                price: productPrice
-            });
+            // Check if product already in cart
+            const existingProductIndex = cart.findIndex(item => item.name === productName);
+            if (existingProductIndex !== -1) {
+                // Increase quantity
+                cart[existingProductIndex].quantity += 1;
+            } else {
+                // Add new product with quantity 1
+                cart.push({
+                    name: productName,
+                    price: productPrice,
+                    quantity: 1
+                });
+            }
+            
+            // Save cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
             
             // Show confirmation
-            alert(`Added ${productName} (${productPrice}) to your cart\n\nTotal items: ${cart.length}`);
+            alert(`Added ${productName} (₹${productPrice}) to your cart\n\nTotal items: ${cart.reduce((acc, item) => acc + item.quantity, 0)}`);
         });
     });
 

@@ -17,8 +17,9 @@
         <a href="about.html" class="hover:text-gray-600 transition">About</a>
         <a href="products.html" class="hover:text-gray-600 transition">Products</a>
         <a href="tranding.html" class="text-gray-600 hover:text-gray-900">Tranding</a>
-        <a href="#" class="text-gray-600 hover:text-gray-900">Combo Deals</a>
-        <a href="#" class="text-gray-600 hover:text-gray-900">Oud</a>
+        <a href="luxury.html" class="text-gray-600 hover:text-gray-900">Luxury</a>
+        <a href="giftbox.html" class="text-gray-600 hover:text-gray-900">Gift Box</a>
+        <a href="oud.html" class="text-gray-600 hover:text-gray-900">Oudh</a>
         <a href="contact.html" class="hover:text-indigo-600 transition">Contact</a>
         <a href="cart.html" class="hover:text-indigo-600 transition font-semibold"><i class="fas fa-shopping-cart"></i> Cart</a>
       </nav>
@@ -33,8 +34,9 @@
       <a href="about.html" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">About</a>
       <a href="products.html" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Products</a>
       <a href="tranding.html" class="text-gray-600 hover:text-gray-900">Tranding</a>
-      <a href="#" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Combo Deals</a>
-      <a href="#" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Oud</a>
+      <a href="luxury.html" class="text-gray-600 hover:text-gray-900">Luxury</a>
+      <a href="giftbox.html" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Gift Box</a>
+      <a href="oud.html" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Oudh</a>
       <a href="contact.html" class="block px-6 py-3 border-b border-gray-200 hover:bg-indigo-50">Contact</a>
       <a href="cart.html" class="block px-6 py-3 hover:bg-indigo-50 font-semibold"><i class="fas fa-shopping-cart"></i> Cart</a>
     </nav>
@@ -52,29 +54,18 @@
             <th class="border-b border-gray-300 py-3 px-4">Total</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="border-b border-gray-200 py-3 px-4">Rose Attar</td>
-            <td class="border-b border-gray-200 py-3 px-4">$45.00</td>
-            <td class="border-b border-gray-200 py-3 px-4">1</td>
-            <td class="border-b border-gray-200 py-3 px-4">$45.00</td>
-          </tr>
-          <tr>
-            <td class="border-b border-gray-200 py-3 px-4">Sandalwood Attar</td>
-            <td class="border-b border-gray-200 py-3 px-4">$50.00</td>
-            <td class="border-b border-gray-200 py-3 px-4">2</td>
-            <td class="border-b border-gray-200 py-3 px-4">$100.00</td>
-          </tr>
+        <tbody id="cart-items">
+          <!-- Cart items will be dynamically inserted here -->
         </tbody>
         <tfoot>
           <tr>
             <td colspan="3" class="text-right font-semibold py-3 px-4">Grand Total</td>
-            <td class="font-semibold py-3 px-4">$145.00</td>
+            <td id="grand-total" class="font-semibold py-3 px-4">₹0.00</td>
           </tr>
         </tfoot>
       </table>
       <div class="mt-6 text-right">
-        <button class="px-6 py-3 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition">Proceed to Checkout</button>          
+        <button id="checkout-btn" class="px-6 py-3 bg-yellow-500 text-white rounded-lg shadow hover:bg-yellow-600 transition">Proceed to Checkout</button>          
       </div>
     </div>
   </main>
@@ -90,6 +81,45 @@
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
+    });
+
+    // Function to render cart items
+    function renderCart() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const grandTotalElem = document.getElementById('grand-total');
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cartItemsContainer.innerHTML = '';
+
+      let grandTotal = 0;
+
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        grandTotal += itemTotal;
+
+        const tr = document.createElement('tr');
+
+        tr.innerHTML = `
+          <td class="border-b border-gray-200 py-3 px-4">${item.name}</td>
+          <td class="border-b border-gray-200 py-3 px-4">₹${item.price.toFixed(2)}</td>
+          <td class="border-b border-gray-200 py-3 px-4">${item.quantity}</td>
+          <td class="border-b border-gray-200 py-3 px-4">₹${itemTotal.toFixed(2)}</td>
+        `;
+
+        cartItemsContainer.appendChild(tr);
+      });
+
+      grandTotalElem.textContent = `₹${grandTotal.toFixed(2)}`;
+    }
+
+    // Render cart on page load
+    document.addEventListener('DOMContentLoaded', renderCart);
+
+    // Checkout button click handler (no payment process as per user request)
+    document.getElementById('checkout-btn').addEventListener('click', () => {
+      alert('Thank you for your order! Your payment will be processed soon.');
+      // Optionally clear cart after checkout
+      localStorage.removeItem('cart');
+      renderCart();
     });
   </script>
 </body>
